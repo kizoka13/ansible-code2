@@ -1,0 +1,15 @@
+---
+- hosts: db
+  become: yes
+  gather_facts: false
+  tasks:
+    - name: Install packages
+      yum:
+        name: "{{ item }}"
+        state: present
+      loop:
+        - curl
+        - finger
+        - wget
+        - httpd
+        - ntp
