@@ -9,7 +9,7 @@ pipeline {
                     sh 'zip -r ansible-codes.zip * -x Jenkinsfile'
                     
                     // Upload the zip file to JFrog Artifactory
-                    sh 'curl -uadmin:AP5iaA335pTzAyuonwEeQJR5cA2 -T ansible-codes.zip "http://3.86.178.238:8081/artifactory/ansible-code"'
+                    sh 'curl -uadmin:AP5iaA335pTzAyuonwEeQJR5cA2 -T ansible-codes.zip "http://3.86.178.238:8081/artifactory/ansible-code/ansible-codes.zip"'
                 }
             }
         }
@@ -21,7 +21,7 @@ pipeline {
             steps {
                 script {
                     // Download the zip file from JFrog Artifactory
-                    sh 'curl -uadmin:AP5iaA335pTzAyuonwEeQJR5cA2 -O "http://3.86.178.238:8081/artifactory/ansible-code/ansible.codes.zip"'
+                    sh 'curl -uadmin:AP5iaA335pTzAyuonwEeQJR5cA2 -O "http://3.86.178.238:8081/artifactory/ansible-code/ansible-codes.zip"'
                     // Now you can use the downloaded files on the agent
                 }
             }
