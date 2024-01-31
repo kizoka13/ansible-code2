@@ -27,7 +27,7 @@ pipeline {
             }
         }
         
-        stage('Run playbook') {
+        stage('Run playbook and deploy') {
             agent {
                 label 'ansible'
             }
