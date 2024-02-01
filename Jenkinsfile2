@@ -1,0 +1,18 @@
+pipeline {
+    agent any
+
+    triggers {
+        cron('H H 1 * *') // Run the job at 1:00 AM on the 1st day of every month
+    }
+
+    stages {
+        stage('Update') {
+            steps {
+                script {
+                    // Execute the yum update command
+                    sh 'sudo yum update -y'
+                }
+            }
+        }
+    }
+}
